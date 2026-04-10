@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singli-Translate Hub Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <div id="help-modal" class="modal hidden">
+        <div class="modal-content card">
+            <div class="card-header">
+                <span><i class="fa-solid fa-book-open"></i> Singlish Mapping Guide</span>
+                <button id="close-modal-btn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-grid">
+                    <div class="guide-column">
+                        <h3>Consonants</h3>
+                        <ul>
+                            <li>k ➔ ක</li><li>g ➔ ග</li><li>gh ➔ ඝ</li>
+                            <li>ch ➔ ච</li><li>j ➔ ජ</li><li>jh ➔ ඣ</li>
+                            <li>t ➔ ට</li><li>d ➔ ඩ</li><li>th ➔ ත</li>
+                            <li>dh ➔ ද</li><li>n ➔ න</li><li>p ➔ ප</li>
+                        </ul>
+                    </div>
+                    <div class="guide-column">
+                        <h3>Vowels & Modifiers</h3>
+                        <ul>
+                            <li>a ➔ අ / (ක්)</li><li>aa ➔ ආ / ා</li>
+                            <li>ae ➔ ඇ / ැ</li><li>i ➔ ඉ / ි</li>
+                            <li>u ➔ උ / ු</li><li>e ➔ එ / ෙ</li>
+                            <li>o ➔ ඔ / ො</li><li>s ➔ ස</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="hint">* Use 'aa' for long vowels, 'th/dh' for soft sounds.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <header>
+            <div class="header-top">
+                <h1><i class="fa-solid fa-language"></i> Singli-Translate Hub</h1>
+                <button id="help-btn" class="help-circle-btn" title="Mapping Guide"><i class="fa-solid fa-question"></i></button>
+            </div>
+            
+            <div class="mode-switcher">
+                <span id="mode-text">Singlish to Sinhala & English</span>
+                <button id="switch-mode-btn" class="switch-btn" title="Switch Mode">
+                    <i class="fa-solid fa-repeat"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="translator-grid">
+            <div class="card input-card">
+                <div class="card-header">
+                    <span id="input-label"><i class="fa-solid fa-keyboard"></i> Singlish Input</span>
+                    <button id="clear-btn" class="icon-btn" title="Clear All"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <textarea id="main-input" placeholder="Type here (e.g. Oya kohomada?)"></textarea>
+            </div>
+
+            <div class="output-wrapper">
+                <div class="card output-card sinhala">
+                    <div class="card-header">
+                        <span id="output-1-label">සිංහල (Sinhala)</span>
+                        <button class="copy-btn" data-target="output-1"><i class="fa-solid fa-copy"></i></button>
+                    </div>
+                    <div id="output-1" class="output-text">පරිවර්තනය මෙතන පෙන්වයි...</div>
+                </div>
+
+                <div class="card output-card english">
+                    <div class="card-header">
+                        <span id="output-2-label">English Translation</span>
+                        <div class="header-actions">
+                            <div id="loader" class="loader hidden"></div>
+                            <button id="tts-btn" class="icon-btn" title="Listen"><i class="fa-solid fa-volume-high"></i></button>
+                            <button class="copy-btn" data-target="output-2"><i class="fa-solid fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div id="output-2" class="output-text">Translation results here...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section card">
+            <div class="card-header">
+                <span><i class="fa-solid fa-clock-rotate-left"></i> Recent History</span>
+                <button id="clear-history-btn" class="icon-btn" title="Clear History"><i class="fa-solid fa-circle-xmark"></i></button>
+            </div>
+            <div id="history-list" class="history-list">
+                <p class="empty-msg">No recent history</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
